@@ -1,15 +1,11 @@
-export type Profile = {
+type Profile = {
   name: string;
-  /** The part of `name` people actually call him; highlighted in the sidebar. */
-  nickname: string;
-  /** Job title shown under the name. */
+  nickname: string; // highlighted in the sidebar
   title: string;
   tagline: string;
-  location: string;
-  /** Path under /public (e.g. "/profile.jpg"). Leave undefined to show initials. */
-  photo?: string;
-  /** Path under /public (e.g. "/resume.pdf"). The link only shows once this is set. */
-  resume?: string;
+  description: string; // for search results and link previews
+  photo: string; // path under /public
+  resume: string; // path under /public
   links: { github: string; linkedin: string; instagram: string; email: string };
   about: string[];
 };
@@ -18,11 +14,11 @@ export const profile: Profile = {
   name: "Farhan Fitran Maulana",
   nickname: "Farhan",
   title: "Aspiring AI Engineer",
-  tagline:
-    "I turn raw data into insights, dashboards, and machine learning models.",
-  location: "Surabaya, Indonesia",
+  tagline: "I turn raw data into insights, dashboards, and machine learning models.",
+  description:
+    "Portfolio of Farhan Fitran Maulana: Information Systems student at ITS Surabaya and aspiring AI engineer building machine learning, computer vision, and data projects.",
   photo: "/profile.jpg",
-  resume: undefined,
+  resume: "/Farhan-Fitran-Maulana-CV.pdf",
   links: {
     github: "https://github.com/fuhrerhn",
     linkedin: "https://www.linkedin.com/in/farhanfitran",
