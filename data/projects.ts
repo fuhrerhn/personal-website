@@ -1,7 +1,7 @@
 import type { Project } from "./types";
 
-// `featured` projects show on the home page; every project appears in /archive.
-// Screenshots (`image`) and PadiCare's live demo (`links.demo`) are still to be added.
+// featured projects show on the home page, all of them in /archive
+// TODO: add screenshots (image)
 export const projects: Project[] = [
   {
     id: "olist-dashboard",
@@ -20,7 +20,10 @@ export const projects: Project[] = [
     summary:
       "A 10-class rice disease classifier using EfficientNet-B0 transfer learning, reaching 93.66% test accuracy and 93.57% macro F1. Deployed as a bilingual Streamlit app with top-3 predictions and agronomic recommendations.",
     tags: ["PyTorch", "EfficientNet-B0", "Streamlit"],
-    links: { github: "https://github.com/fuhrerhn/padicare-streamlit" },
+    links: {
+      github: "https://github.com/fuhrerhn/padicare-streamlit",
+      demo: "https://padicareai.streamlit.app/",
+    },
     featured: true,
   },
   {
