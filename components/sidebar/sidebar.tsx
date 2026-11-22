@@ -1,0 +1,24 @@
+import { profile } from "@/data/profile";
+import { sections } from "@/data/sections";
+import { NavLinks } from "./nav-links";
+import { ProfilePhoto } from "./profile-photo";
+import { SocialLinks } from "./social-links";
+
+export function Sidebar() {
+  return (
+    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[440px] lg:shrink-0 lg:flex-col lg:justify-between lg:overflow-y-auto lg:py-16 xl:py-20">
+      <div>
+        <ProfilePhoto />
+        <h1 className="type-display mt-6 text-fg">{profile.name}</h1>
+        <p className="type-role mt-3 text-fg">{profile.title}</p>
+        <p className="type-body mt-4 max-w-xs text-fg-secondary">{profile.tagline}</p>
+
+        <nav aria-label="In-page navigation" className="mt-12 hidden lg:block">
+          <NavLinks items={sections} />
+        </nav>
+      </div>
+
+      <SocialLinks className="mt-8 lg:mt-12" />
+    </header>
+  );
+}
