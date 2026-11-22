@@ -8,7 +8,7 @@ export type Profile = {
   photo?: string;
   /** Path under /public (e.g. "/resume.pdf"). The link only shows once this is set. */
   resume?: string;
-  links: { github: string; linkedin: string };
+  links: { github: string; linkedin: string; instagram: string; email: string };
   about: string[];
 };
 
@@ -23,10 +23,11 @@ export const profile: Profile = {
   links: {
     github: "https://github.com/fuhrerhn",
     linkedin: "https://www.linkedin.com/in/farhanfitran",
+    instagram: "https://www.instagram.com/farhan.fitran",
+    email: "farhanfitran123@gmail.com",
   },
   about: [
-    "I'm an Information Systems student at Institut Teknologi Sepuluh Nopember (ITS) who enjoys turning raw data into insight, from SQL pipelines and Tableau dashboards to machine learning models people can actually use.",
-    "Lately I've been building an ETL pipeline for 99K e-commerce orders, a rice disease classifier with 93.66% test accuracy, and a real-time drowsiness detector. Outside class, I lead data teams for campus events, managing records for 7,100+ new students, and I teach Tableau as a practicum assistant.",
-    "I'm currently looking for a Data Analyst, Business Intelligence, Data Scientist, or Machine Learning Engineer internship.",
+    "I'm an Information Systems student at Institut Teknologi Sepuluh Nopember (ITS), building SQL pipelines, dashboards, and machine learning projects. Outside class, I lead data teams for campus events and teach Tableau as a practicum assistant.",
+    "I'm looking for a Data Analyst, Business Intelligence, Data Scientist, or Machine Learning Engineer internship.",
   ],
 };
