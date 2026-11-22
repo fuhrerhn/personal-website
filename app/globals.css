@@ -20,7 +20,7 @@
   --color-accent-subtle: rgb(163 74 6 / 0.1);
   --color-text-on-accent: #ffffff;
   /* Cursor glow color. Not a Figma token; each theme sets its own value. */
-  --color-glow: rgb(163 74 6 / 0.08);
+  --color-glow: rgb(245 165 36 / 0.22);
 }
 
 .dark {
