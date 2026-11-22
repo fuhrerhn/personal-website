@@ -3,8 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-// Icons switch with CSS (`dark:`), so the button renders identically on the server
-// and the client and there is no hydration mismatch.
+// the icons swap with CSS, so server and client render the same markup
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
