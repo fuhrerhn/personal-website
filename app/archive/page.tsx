@@ -9,6 +9,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Project Archive",
   description: `Every project by ${profile.name}, from data pipelines to computer vision.`,
+  alternates: { canonical: "/archive" },
 };
 
 const headClass = "type-mono-meta py-4 pr-6 font-semibold text-fg-muted";
