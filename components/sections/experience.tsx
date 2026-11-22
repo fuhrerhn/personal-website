@@ -11,17 +11,15 @@ export function Experience() {
           <TimelineCard key={entry.id} entry={entry} />
         ))}
       </ol>
-      {profile.resume ? (
-        <a
-          href={profile.resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="type-link mt-12 inline-flex items-center gap-1 text-fg transition-colors hover:text-accent motion-reduce:transition-none"
-        >
-          View Full Résumé
-          <ArrowUpRight className="size-4" aria-hidden="true" />
-        </a>
-      ) : null}
+      <a
+        href={profile.resume}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="type-link mt-12 inline-flex items-center gap-1 text-fg transition-colors hover:text-accent motion-reduce:transition-none"
+      >
+        View Full Résumé
+        <ArrowUpRight className="size-4" aria-hidden="true" />
+      </a>
     </>
   );
 }
