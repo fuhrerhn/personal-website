@@ -1,11 +1,7 @@
 import { Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/ui/icons";
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from "@/components/ui/icons";
 import { profile } from "@/data/profile";
 import { ThemeToggle } from "./theme-toggle";
-
-// The address lives in an env var (see .env.example) so it is not hard-coded in the
-// public repo. The "Email me" button only renders when it is set.
-const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
 const linkClass =
   "block text-fg-secondary transition-colors hover:text-fg motion-reduce:transition-none";
@@ -35,13 +31,22 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           <LinkedInIcon className="size-6" />
         </a>
       </li>
-      {email ? (
-        <li>
-          <a href={`mailto:${email}`} aria-label="Email me" className={linkClass}>
-            <Mail className="size-6" aria-hidden="true" />
-          </a>
-        </li>
-      ) : null}
+      <li>
+        <a
+          href={profile.links.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram (opens in a new tab)"
+          className={linkClass}
+        >
+          <InstagramIcon className="size-6" />
+        </a>
+      </li>
+      <li>
+        <a href={`mailto:${profile.links.email}`} aria-label="Email me" className={linkClass}>
+          <Mail className="size-6" aria-hidden="true" />
+        </a>
+      </li>
       <li>
         <ThemeToggle />
       </li>
