@@ -1,6 +1,9 @@
-import { Copyright, SiteCredits } from "@/components/footer";
+import type { Metadata } from "next";
+import { Copyright } from "@/components/footer";
+import { JsonLd } from "@/components/json-ld";
 import { About } from "@/components/sections/about";
 import { Achievements } from "@/components/sections/achievements";
+import { Contact } from "@/components/sections/contact";
 import { Education } from "@/components/sections/education";
 import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
@@ -8,13 +11,20 @@ import { Section } from "@/components/sections/section";
 import { Skills } from "@/components/sections/skills";
 import { Sidebar } from "@/components/sidebar/sidebar";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <div className="mx-auto max-w-[1440px] px-6 md:px-12 xl:px-24">
+      <JsonLd />
+
       <div className="min-h-screen py-12 md:py-16 lg:flex lg:items-start lg:gap-12 lg:py-0 xl:gap-24">
         <Sidebar />
 
-        <main id="content" className="pt-24 lg:flex-1 xl:pt-28">
+        {/* same bottom padding as the sidebar, so the form lines up with the social icons */}
+        <main id="content" className="pt-24 pb-16 lg:flex-1 xl:pt-28 xl:pb-20">
           <Section id="about">
             <About />
           </Section>
@@ -33,8 +43,9 @@ export default function Home() {
           <Section id="skills">
             <Skills />
           </Section>
-
-          <SiteCredits />
+          <Section id="contact">
+            <Contact />
+          </Section>
         </main>
       </div>
 
