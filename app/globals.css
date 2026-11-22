@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
-/* Theme switching is class-based (next-themes puts `dark` on <html>). */
+/* dark mode is a class on <html>, set by next-themes */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/*
-  Semantic color tokens. The names match the Figma variables' WEB code syntax
-  (see personal-website-prd.md, Lampiran B). Light is the default; `.dark` overrides.
-*/
+/* color tokens: light by default, .dark overrides them */
 :root {
   color-scheme: light;
   --color-bg-page: #fbf9f5;
@@ -19,7 +16,7 @@
   --color-accent-default: #a34a06;
   --color-accent-subtle: rgb(163 74 6 / 0.1);
   --color-text-on-accent: #ffffff;
-  /* Cursor glow color. Not a Figma token; each theme sets its own value. */
+  /* cursor glow */
   --color-glow: rgb(245 165 36 / 0.22);
 }
 
@@ -31,7 +28,6 @@
   --color-border-default: #3b3b42;
   --color-text-primary: #f0ece4;
   --color-text-secondary: #b8b2a6;
-  /* Figma still has #948E82; PRD risk table raises it to pass AA on hovered cards (4.79:1). */
   --color-text-muted: #9c968a;
   --color-accent-default: #f5a524;
   --color-accent-subtle: rgb(245 165 36 / 0.12);
@@ -39,7 +35,7 @@
   --color-glow: rgb(245 165 36 / 0.1);
 }
 
-/* Short Tailwind utility names (bg-page, text-fg, border-line, ...) that point at the tokens above. */
+/* short names for the Tailwind utilities (bg-page, text-fg, ...) */
 @theme inline {
   --color-page: var(--color-bg-page);
   --color-surface: var(--color-bg-surface);
@@ -82,7 +78,7 @@ body {
   border-radius: var(--radius-sm);
 }
 
-/* Text styles. They mirror the Figma text styles (Geist / Geist Mono). */
+/* text styles */
 @utility type-display {
   font-weight: 700;
   font-size: 2.25rem;
