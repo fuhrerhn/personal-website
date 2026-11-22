@@ -1,10 +1,12 @@
 export type Profile = {
   name: string;
-  /** Job title shown under the name. Proposed in the PRD, still open to change. */
+  /** The part of `name` people actually call him; highlighted in the sidebar. */
+  nickname: string;
+  /** Job title shown under the name. */
   title: string;
   tagline: string;
   location: string;
-  /** Path under /public (e.g. "/profile.jpg"). Leave undefined until the photo exists. */
+  /** Path under /public (e.g. "/profile.jpg"). Leave undefined to show initials. */
   photo?: string;
   /** Path under /public (e.g. "/resume.pdf"). The link only shows once this is set. */
   resume?: string;
@@ -14,11 +16,12 @@ export type Profile = {
 
 export const profile: Profile = {
   name: "Farhan Fitran Maulana",
-  title: "Information Systems @ ITS · Data & ML",
+  nickname: "Farhan",
+  title: "Aspiring AI Engineer",
   tagline:
     "I turn raw data into insights, dashboards, and machine learning models.",
   location: "Surabaya, Indonesia",
-  photo: undefined,
+  photo: "/profile.jpg",
   resume: undefined,
   links: {
     github: "https://github.com/fuhrerhn",
@@ -27,7 +30,7 @@ export const profile: Profile = {
     email: "farhanfitran123@gmail.com",
   },
   about: [
-    "I'm an Information Systems student at Institut Teknologi Sepuluh Nopember (ITS), building SQL pipelines, dashboards, and machine learning projects. Outside class, I lead data teams for campus events and teach Tableau as a practicum assistant.",
-    "I'm looking for a Data Analyst, Business Intelligence, Data Scientist, or Machine Learning Engineer internship.",
+    "I'm an Information Systems student at Institut Teknologi Sepuluh Nopember (ITS), focused on machine learning and computer vision, with a solid base in data analytics and business intelligence.",
+    "I've built an ETL pipeline for 99K e-commerce orders, deep learning models for rice disease and drowsiness detection, and placed 2nd on Kaggle and 3rd in a data science competition. I also lead data teams for campus events and teach Tableau as a practicum assistant.",
   ],
 };
