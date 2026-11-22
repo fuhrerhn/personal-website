@@ -7,7 +7,7 @@ export const education: TimelineEntry[] = [
     title: "Bachelor's Degree in Information Systems",
     org: "Institut Teknologi Sepuluh Nopember (ITS), Surabaya",
     summary:
-      "GPA 3.75/4.00, expected graduation in October 2028. Coursework in data analytics and diagnostics, predictive modeling, database systems, and statistics.",
+      "GPA 3.75/4.00, expected graduation in 2028. Coursework in data analytics and diagnostics, predictive modeling, database systems, and statistics.",
     tags: ["Data Analytics", "Predictive Modeling", "Database Systems", "Statistics"],
   },
   {
