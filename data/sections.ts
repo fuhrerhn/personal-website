@@ -5,6 +5,7 @@ export const sections = [
   { id: "projects", label: "Projects" },
   { id: "achievements", label: "Achievements" },
   { id: "skills", label: "Skills" },
+  { id: "contact", label: "Contact" },
 ] as const;
 
 export type SectionId = (typeof sections)[number]["id"];
