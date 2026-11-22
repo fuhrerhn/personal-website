@@ -1,25 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import type { Project } from "@/data/types";
+import { ProjectLinks } from "./project-links";
 import { TagList } from "./tag-list";
 
-function ProjectLink({ href, children }: { href: string; children: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="type-link inline-flex items-center gap-1 text-fg-secondary transition-colors hover:text-accent motion-reduce:transition-none"
-    >
-      {children}
-      <ArrowUpRight className="size-4" aria-hidden="true" />
-    </a>
-  );
-}
-
 export function ProjectCard({ project }: { project: Project }) {
-  const { github, demo } = project.links;
-
   return (
     <li className="group relative">
       <div
@@ -51,12 +35,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </h3>
           <p className="type-body-sm mt-2 text-fg-secondary">{project.summary}</p>
           <TagList tags={project.tags} className="mt-4" />
-          {github || demo ? (
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-              {github ? <ProjectLink href={github}>GitHub</ProjectLink> : null}
-              {demo ? <ProjectLink href={demo}>Live Demo</ProjectLink> : null}
-            </div>
-          ) : null}
+          <ProjectLinks links={project.links} className="mt-4" />
         </div>
       </div>
     </li>
