@@ -17,6 +17,8 @@ export type Project = {
   summary: string;
   tags: string[];
   links: { github?: string; demo?: string };
+  /** Featured projects show on the home page; all projects appear in /archive. */
+  featured: boolean;
   /** Path under /public. A placeholder shows until a screenshot exists. */
   image?: string;
 };
