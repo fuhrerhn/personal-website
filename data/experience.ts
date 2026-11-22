@@ -1,7 +1,6 @@
 import type { TimelineEntry } from "./types";
 
-// Featured entries only (PRD, Lampiran D). Newest start date first.
-// The remaining roles from the CV stay in the résumé.
+// featured roles only, newest first; the rest are in the résumé
 export const experience: TimelineEntry[] = [
   {
     id: "practicum-assistant",

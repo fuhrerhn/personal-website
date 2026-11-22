@@ -1,7 +1,5 @@
 import type { SkillGroup } from "./types";
 
-// Grouped by what each skill is used for, led by the AI/ML focus.
-// Every item comes from the CV.
 export const skills: SkillGroup[] = [
   {
     label: "AI & Machine Learning",
