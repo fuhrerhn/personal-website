@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Farhan Fitran Maulana, personal website
 
-## Getting Started
+My portfolio: Information Systems student at ITS Surabaya, aspiring AI engineer.
 
-First, run the development server:
+Live site: add the URL here after deploying.
+
+## Stack
+
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Geist fonts, next-themes, lucide-react, Vercel Analytics. The message form uses Supabase (Postgres) and Resend.
+
+## Running it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000. `npm run build` makes a production build and `npm run lint` runs ESLint.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things are
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/          routes, layout, SEO files (robots, sitemap, OG image), the 404 page
+components/   sidebar, sections, small UI pieces
+data/         all the text on the site
+lib/          site URL, message validation, Supabase and email helpers
+public/       photo and résumé
+supabase/     SQL for the messages table
+```
 
-## Learn More
+To change what the site says, edit the files in `data/`. `profile.ts` has the name, links, About text, and SEO description. `projects.ts` marks which projects are `featured` (shown on the home page); every project is listed at `/archive`.
 
-To learn more about Next.js, take a look at the following resources:
+## Message form
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The form in the Contact section posts to a server action (`app/actions/send-message.ts`):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Bots are dropped: a filled hidden field, or a submit faster than a person could type.
+2. The message is checked (`lib/message.ts`). The database checks the same limits again.
+3. Each visitor can send 3 messages an hour and 10 a day. Visitors are counted by a salted hash of their IP, never the IP itself.
+4. The message is saved to Supabase and emailed through Resend at the same time. If one of them fails, the other still goes through.
 
-## Deploy on Vercel
+The `messages` table has row level security on and no policies, so only the server (using the service role key) can read or write it. Messages are read in the Supabase table editor. To set it up from scratch, run `supabase/schema.sql` in a new project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy `.env.example` to `.env.local`.
+
+| Variable | What it is for |
+|---|---|
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase secret key (server only) |
+| `RESEND_API_KEY` | Resend API key |
+| `CONTACT_TO_EMAIL` | Where notifications go. Without a verified Resend domain this must be the email of the Resend account |
+| `CONTACT_FROM_EMAIL` | Optional sender, defaults to `onboarding@resend.dev` |
+| `MESSAGE_HASH_SALT` | Optional salt for the IP hash |
+| `NEXT_PUBLIC_SITE_URL` | Public address, once there is a custom domain |
+| `GOOGLE_SITE_VERIFICATION` | Search Console verification token |
+
+On Vercel the site address is picked up automatically, and preview deployments are kept out of search results.
+
+## Deploying
+
+Import the repo on Vercel and add the variables above. After the first production deploy, verify the site in Google Search Console and submit `/sitemap.xml`.
+
+Text, photo, résumé, and design are © 2026 Farhan Fitran Maulana.
