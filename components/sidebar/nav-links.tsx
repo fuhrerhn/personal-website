@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 
 type Item = { readonly id: string; readonly label: string };
 
-// Scroll-spy: the section crossing a thin band near the top of the viewport is "active".
-// At the very bottom of the page the last item wins, since a short last section may
-// never reach that band.
+// scroll-spy: the section crossing a band near the top is active; the last one wins at the very bottom
 export function NavLinks({ items }: { items: readonly Item[] }) {
   const [active, setActive] = useState(items[0]?.id ?? "");
 
