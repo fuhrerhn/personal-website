@@ -1,0 +1,66 @@
+import type { SkillGroup } from "./types";
+
+export const skills: SkillGroup[] = [
+  {
+    label: "Programming & Tools",
+    items: [
+      "Python",
+      "SQL (PostgreSQL)",
+      "R",
+      "Java",
+      "Pandas",
+      "PyTorch",
+      "OpenCV",
+      "MediaPipe",
+      "Tableau",
+      "Power BI",
+      "Looker Studio",
+      "Microsoft Excel",
+      "Jupyter Notebook",
+      "Git/GitHub",
+      "Streamlit",
+      "FastAPI",
+      "SAP S/4HANA",
+    ],
+  },
+  {
+    label: "Data & Business Intelligence",
+    items: [
+      "ETL / Data Pipeline",
+      "Data Modeling (Fact and Dimension Tables)",
+      "Data Quality Auditing",
+      "Dashboard Development",
+      "KPI Design",
+      "Data Visualization",
+      "Data Cleaning & Preprocessing",
+      "Exploratory Data Analysis (EDA)",
+      "Business Intelligence",
+    ],
+  },
+  {
+    label: "Machine Learning & Statistics",
+    items: [
+      "Regression",
+      "Classification",
+      "Time Series Forecasting",
+      "Deep Learning (CNN)",
+      "Transfer Learning",
+      "Computer Vision",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Statistical Analysis",
+      "Hypothesis Testing",
+    ],
+  },
+  {
+    label: "Soft Skills",
+    items: [
+      "Analytical Thinking",
+      "Structured Problem-Solving",
+      "Leadership",
+      "Teamwork",
+      "Public Speaking",
+      "Communication",
+    ],
+  },
+];
