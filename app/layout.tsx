@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { CursorGlow } from "@/components/cursor-glow";
 import { ThemeProvider } from "@/components/theme-provider";
 import { profile } from "@/data/profile";
 import "./globals.css";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to Content
           </a>
+          <CursorGlow />
           {children}
         </ThemeProvider>
         <Analytics />
