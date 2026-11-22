@@ -4,7 +4,6 @@ import { NavLinks } from "./nav-links";
 import { ProfilePhoto } from "./profile-photo";
 import { SocialLinks } from "./social-links";
 
-// Same text as `profile.name`; only the nickname gets the accent color.
 function HighlightedName() {
   const { name, nickname } = profile;
   const start = name.indexOf(nickname);
