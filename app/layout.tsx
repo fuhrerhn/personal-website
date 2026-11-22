@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { CursorGlow } from "@/components/cursor-glow";
 import { ThemeProvider } from "@/components/theme-provider";
 import { profile } from "@/data/profile";
+import { isIndexable, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,9 +17,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const defaultTitle = `${profile.name} | ${profile.title}`;
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
+// pages set their own canonical URL; the OG image comes from app/opengraph-image.tsx
 export const metadata: Metadata = {
-  title: { default: profile.name, template: `%s | ${profile.name}` },
-  description: `${profile.title}. ${profile.tagline}`,
+  metadataBase: new URL(siteUrl),
+  title: { default: defaultTitle, template: `%s | ${profile.name}` },
+  description: profile.description,
+  applicationName: profile.name,
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  keywords: [
+    profile.name,
+    "Farhan Fitran",
+    "Aspiring AI Engineer",
+    "portfolio",
+    "machine learning",
+    "computer vision",
+    "data analytics",
+    "ITS Surabaya",
+  ],
+  openGraph: { type: "website", siteName: profile.name, locale: "en_US" },
+  twitter: { card: "summary_large_image" },
+  robots: {
+    index: isIndexable,
+    follow: isIndexable,
+    googleBot: {
+      index: isIndexable,
+      follow: isIndexable,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  ...(googleVerification ? { verification: { google: googleVerification } } : {}),
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fbf9f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a1d" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
