@@ -2,10 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-// A soft accent-colored glow that follows the pointer, like the reference site.
-// It only runs on devices with a real hover pointer and is skipped entirely when the
-// user prefers reduced motion. Position is written straight to CSS variables, so
-// moving the mouse never triggers a React re-render.
+// soft glow that follows the mouse; skipped on touch screens and with reduced motion
 export function CursorGlow() {
   const ref = useRef<HTMLDivElement>(null);
 
