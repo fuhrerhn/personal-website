@@ -13,7 +13,7 @@ export function ThemeToggle() {
       type="button"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle light and dark theme"
-      className="cursor-pointer text-fg-secondary transition-colors hover:text-fg motion-reduce:transition-none"
+      className="block cursor-pointer text-fg-secondary transition-colors hover:text-fg motion-reduce:transition-none"
     >
       <Sun className="hidden size-6 dark:block" aria-hidden="true" />
       <Moon className="size-6 dark:hidden" aria-hidden="true" />
