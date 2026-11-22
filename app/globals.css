@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* Theme switching is class-based (next-themes puts `dark` on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Semantic color tokens. The names match the Figma variables' WEB code syntax
+  (see personal-website-prd.md, Lampiran B). Light is the default; `.dark` overrides.
+*/
+:root {
+  color-scheme: light;
+  --color-bg-page: #fbf9f5;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f4efe6;
+  --color-border-default: #e7dfd0;
+  --color-text-primary: #1f1d1a;
+  --color-text-secondary: #4a453e;
+  --color-text-muted: #6f695f;
+  --color-accent-default: #a34a06;
+  --color-accent-subtle: rgb(163 74 6 / 0.1);
+  --color-text-on-accent: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-bg-page: #1a1a1d;
+  --color-bg-surface: #222226;
+  --color-bg-surface-hover: #2b2b30;
+  --color-border-default: #3b3b42;
+  --color-text-primary: #f0ece4;
+  --color-text-secondary: #b8b2a6;
+  /* Figma still has #948E82; PRD risk table raises it to pass AA on hovered cards (4.79:1). */
+  --color-text-muted: #9c968a;
+  --color-accent-default: #f5a524;
+  --color-accent-subtle: rgb(245 165 36 / 0.12);
+  --color-text-on-accent: #121214;
+}
+
+/* Short Tailwind utility names (bg-page, text-fg, border-line, ...) that point at the tokens above. */
+@theme inline {
+  --color-page: var(--color-bg-page);
+  --color-surface: var(--color-bg-surface);
+  --color-surface-hover: var(--color-bg-surface-hover);
+  --color-line: var(--color-border-default);
+  --color-fg: var(--color-text-primary);
+  --color-fg-secondary: var(--color-text-secondary);
+  --color-fg-muted: var(--color-text-muted);
+  --color-accent: var(--color-accent-default);
+  --color-accent-soft: var(--color-accent-subtle);
+  --color-on-accent: var(--color-text-on-accent);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent-default) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-default);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Text styles. They mirror the Figma text styles (Geist / Geist Mono). */
+@utility type-display {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.025em;
+  @media (min-width: 64rem) {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+}
+
+@utility type-role {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.005em;
+}
+
+@utility type-card {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+@utility type-body {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+
+@utility type-body-sm {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@utility type-link {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@utility type-mono-section {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@utility type-mono-nav {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@utility type-mono-meta {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@utility type-mono-tag {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
