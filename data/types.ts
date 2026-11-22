@@ -1,13 +1,10 @@
 export type TimelineEntry = {
   id: string;
-  /** Shown in the mono date column, e.g. "SEP 2026 — PRESENT". */
-  period: string;
+  period: string; // shown in the date column
   title: string;
   org: string;
   summary: string;
   tags: string[];
-  /** When set, the whole card becomes a link. */
-  url?: string;
 };
 
 export type Project = {
@@ -17,10 +14,8 @@ export type Project = {
   summary: string;
   tags: string[];
   links: { github?: string; demo?: string };
-  /** Featured projects show on the home page; all projects appear in /archive. */
-  featured: boolean;
-  /** Path under /public. A placeholder shows until a screenshot exists. */
-  image?: string;
+  featured: boolean; // featured projects show on the home page
+  image?: string; // path under /public
 };
 
 export type Achievement = {
