@@ -1,7 +1,6 @@
 import type { SVGProps } from "react";
 
-// lucide-react v1 no longer ships brand icons, so GitHub and LinkedIn are inlined.
-// Paths come from Lucide's earlier icon set (ISC license).
+// lucide-react dropped its brand icons, so these are inlined (paths from an older Lucide, ISC)
 type IconProps = SVGProps<SVGSVGElement>;
 
 function Icon({ children, ...props }: IconProps) {
