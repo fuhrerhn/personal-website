@@ -2,7 +2,7 @@
 
 My portfolio: Information Systems student at ITS Surabaya, aspiring AI engineer.
 
-Live site: farhanfitran.my.id
+Live site: [farhanfitran.my.id](url)
 
 ## Stack
 
