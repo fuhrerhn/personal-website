@@ -147,7 +147,13 @@ export function MessageForm() {
           className={`${inputClass} resize-y`}
         />
         <div className="mt-2 flex items-start justify-between gap-4">
-          {fieldErrors.message ? <p className={`${errorClass} mt-0`}>{fieldErrors.message}</p> : <span />}
+          {fieldErrors.message ? (
+            <p className={`${errorClass} mt-0`}>{fieldErrors.message}</p>
+          ) : (
+            <p className="type-body-sm text-fg-muted">
+              Minimum {MESSAGE_LIMITS.messageMin} characters to send.
+            </p>
+          )}
           <p id={countId} className="type-mono-meta shrink-0 text-fg-muted">
             {message.length} / {MESSAGE_LIMITS.messageMax}
           </p>
