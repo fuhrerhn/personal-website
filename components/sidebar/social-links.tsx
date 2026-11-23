@@ -47,7 +47,8 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           <Mail className="size-6" aria-hidden="true" />
         </a>
       </li>
-      <li>
+      {/* on small screens the toggle floats at the corner instead (see page.tsx) */}
+      <li className="hidden lg:block">
         <ThemeToggle />
       </li>
     </ul>
