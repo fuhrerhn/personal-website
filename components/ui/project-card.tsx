@@ -5,7 +5,7 @@ import { TagList } from "./tag-list";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <li className="group relative">
+    <li className="reveal group relative">
       <div
         aria-hidden="true"
         className="absolute -inset-x-4 -inset-y-4 z-0 rounded-lg transition-colors group-hover:bg-surface-hover motion-reduce:transition-none"
@@ -15,9 +15,10 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.image ? (
             <Image
               src={project.image}
-              alt={`Screenshot of ${project.title}`}
-              width={288}
-              height={180}
+              alt={`Preview of ${project.title}`}
+              width={1280}
+              height={720}
+              sizes="(min-width: 768px) 144px, 100vw"
               className="size-full object-cover"
             />
           ) : (

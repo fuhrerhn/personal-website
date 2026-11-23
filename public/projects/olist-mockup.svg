@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 324" role="img" aria-label="Wireframe of the Olist dashboard">
+  <rect width="576" height="324" fill="#1a1a1d"/>
+  <rect x="0" y="0" width="576" height="40" fill="#222226"/>
+  <rect x="20" y="15" width="120" height="10" rx="3" fill="#f0ece4" opacity="0.85"/>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.2" fill="#f5a524">
+    <text x="556" y="24" text-anchor="end">MOCKUP · IN PROGRESS</text>
+  </g>
+
+  <g fill="#222226" stroke="#3b3b42">
+    <rect x="20" y="58" width="124" height="62" rx="6"/>
+    <rect x="156" y="58" width="124" height="62" rx="6"/>
+    <rect x="292" y="58" width="124" height="62" rx="6"/>
+    <rect x="428" y="58" width="128" height="62" rx="6"/>
+  </g>
+  <g fill="#9c968a" opacity="0.7">
+    <rect x="32" y="72" width="60" height="6" rx="3"/>
+    <rect x="168" y="72" width="60" height="6" rx="3"/>
+    <rect x="304" y="72" width="60" height="6" rx="3"/>
+    <rect x="440" y="72" width="60" height="6" rx="3"/>
+  </g>
+  <g fill="#f5a524">
+    <rect x="32" y="92" width="48" height="14" rx="3"/>
+    <rect x="168" y="92" width="48" height="14" rx="3"/>
+    <rect x="304" y="92" width="48" height="14" rx="3"/>
+    <rect x="440" y="92" width="48" height="14" rx="3"/>
+  </g>
+
+  <rect x="20" y="136" width="330" height="168" rx="6" fill="#222226" stroke="#3b3b42"/>
+  <rect x="32" y="150" width="90" height="6" rx="3" fill="#9c968a" opacity="0.7"/>
+  <path d="M36 270 L90 244 L140 254 L190 216 L240 228 L290 190 L334 176" fill="none" stroke="#f5a524" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <g stroke="#3b3b42">
+    <line x1="32" y1="286" x2="338" y2="286"/>
+    <line x1="32" y1="246" x2="338" y2="246" stroke-dasharray="3 5"/>
+    <line x1="32" y1="206" x2="338" y2="206" stroke-dasharray="3 5"/>
+  </g>
+
+  <rect x="362" y="136" width="194" height="168" rx="6" fill="#222226" stroke="#3b3b42"/>
+  <rect x="374" y="150" width="70" height="6" rx="3" fill="#9c968a" opacity="0.7"/>
+  <g fill="#f5a524">
+    <rect x="378" y="176" width="110" height="14" rx="3"/>
+    <rect x="378" y="198" width="84" height="14" rx="3" opacity="0.8"/>
+    <rect x="378" y="220" width="150" height="14" rx="3"/>
+    <rect x="378" y="242" width="64" height="14" rx="3" opacity="0.65"/>
+    <rect x="378" y="264" width="96" height="14" rx="3" opacity="0.8"/>
+  </g>
+</svg>

@@ -10,6 +10,7 @@ export const projects: Project[] = [
     summary:
       "Built a 3-layer (bronze, silver, gold) ETL pipeline in Python and PostgreSQL for 99K orders, with 10 data-quality audit reports and 4 delivery and customer-satisfaction KPIs. A 3-page Tableau dashboard is in progress.",
     tags: ["PostgreSQL", "Python", "Tableau"],
+    image: "/projects/olist-mockup.svg", // wireframe until the Tableau dashboard is done
     links: { github: "https://github.com/fuhrerhn/olist-dashboard" },
     featured: true,
   },
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     summary:
       "A 10-class rice disease classifier using EfficientNet-B0 transfer learning, reaching 93.66% test accuracy and 93.57% macro F1. Deployed as a bilingual Streamlit app with top-3 predictions and agronomic recommendations.",
     tags: ["PyTorch", "EfficientNet-B0", "Streamlit"],
+    image: "/projects/padicare.webp",
     links: {
       github: "https://github.com/fuhrerhn/padicare-streamlit",
       demo: "https://padicareai.streamlit.app/",
@@ -33,6 +35,7 @@ export const projects: Project[] = [
     summary:
       "Group project. A CNN trained on the MRL Eye Dataset, with MediaPipe Face Mesh and OpenCV for eye detection. Triggers a visual and audio alert after 2 seconds of continuous eye closure.",
     tags: ["PyTorch", "OpenCV", "MediaPipe", "Gradio"],
+    image: "/projects/drowseguard.webp",
     links: { github: "https://github.com/fuhrerhn/drowsiness-detection" },
     featured: true,
   },
