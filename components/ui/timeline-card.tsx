@@ -4,7 +4,7 @@ import { TagList } from "./tag-list";
 // date column on the left from md up, stacked on mobile
 export function TimelineCard({ entry }: { entry: TimelineEntry }) {
   return (
-    <li className="group relative">
+    <li className="reveal group relative">
       <div
         aria-hidden="true"
         className="absolute -inset-x-4 -inset-y-4 z-0 rounded-lg transition-colors group-hover:bg-surface-hover motion-reduce:transition-none"

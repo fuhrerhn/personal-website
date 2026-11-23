@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-// soft glow that follows the mouse; skipped on touch screens and with reduced motion
+// soft glow that follows the mouse, or flashes at the tap point on touch screens;
+// skipped with reduced motion
 export function CursorGlow() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -12,7 +13,26 @@ export function CursorGlow() {
 
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!canHover || reduceMotion) return;
+    if (reduceMotion) return;
+
+    // touch screens: the glow flashes where you tap, then fades out
+    if (!canHover) {
+      let timer = 0;
+      const onTap = (event: PointerEvent) => {
+        window.clearTimeout(timer);
+        el.style.setProperty("--glow-x", `${event.clientX}px`);
+        el.style.setProperty("--glow-y", `${event.clientY}px`);
+        el.style.opacity = "1";
+        timer = window.setTimeout(() => {
+          el.style.opacity = "0";
+        }, 350);
+      };
+      window.addEventListener("pointerdown", onTap, { passive: true });
+      return () => {
+        window.clearTimeout(timer);
+        window.removeEventListener("pointerdown", onTap);
+      };
+    }
 
     let frame = 0;
     const onMove = (event: PointerEvent) => {
